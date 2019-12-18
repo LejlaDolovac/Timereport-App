@@ -12,8 +12,7 @@
             <tbody>
                 <tr v-for="userName in users" :key="userName.id">
                     <td>{{userName}}</td>
-                    <td>{{msg}}</td>
-                    <td>{{newDate}}</td>
+                    <td>{{time}}</td>
                 </tr>
             </tbody>
         </table>
@@ -44,9 +43,10 @@ export default {
    }
  },
  mounted(){
-    axios.get('http://localhost:8081/myTimeReport').then((respons) =>{
+    axios.get('http://localhost:3000/postgetinformation').then((respons) =>{
          console.log(respons.data);
          this.users = respons.data;
+         this.time = respons.data;
      })
      .catch((error) =>{
          console.log(error);
