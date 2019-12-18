@@ -12,13 +12,13 @@ const routes = [
  
   {
     path: '/Firstpage',
-    name: 'firstpage',
+    name: 'Firstpage',
     component: () => import('../views/Firstpage.vue')
   },
   
   {
     path: '/myTimeReport',
-    name: 'mytimeReport',
+    name: 'myTimeReport',
     component: () => import('../views/myTimeReport.vue')
   },
   {

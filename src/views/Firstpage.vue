@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="firstPage">
     <div class="loggabox">
       <div class="squeedLogga">SQUEEDTIME</div>
     </div>
@@ -19,12 +19,13 @@
 
 <script >
 export default {
+  name: 'firstpage',
   methods: {
     showReport() {
-      this.$router.push("../views/myTimeReport.vue");
+      this.$router.push("/myTimeReport");
     },
     showMyPage() {
-      this.$router.push("../views/myPage.vue");
+      this.$router.push("/myPage");
     }
   }
 };
@@ -34,7 +35,7 @@ export default {
 * {
   position: relative;
 }
-#app {
+#firstPage {
   display: flex;
   flex-flow: row wrap;
   flex-direction: row;

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="loginPage">
     <div class="loggabox">
       <div class="squeedLogga">SQUEEDTIME</div>
     </div>
@@ -10,38 +10,42 @@
           <input class="inputMail loginpage-button" type="text" placeholder="Email">
             <p> Password:</p>
          <input class="inputPassword loginpage-button" type="text" placeholder="Password">
+
+
       <div class="login-input-button">
-         <input  class="login-button" type="submit" value="Login" onclick="login">
+         <a href="/auth/google" v-if="user" class="google-btn" value="Login">Login</a>
+         <a href="/auth/google" v-else class="google-btn" value="Logout">Logout</a>
+
       </div>
       </form>
       </div>
   </div>
   </div>
 </template>
+
+
+
 <script >
 export default {
+  name: 'loginPage',
   methods: {
-    login() {
-      this.$router.push("../views/Firstpage.vue"); // ta bort denna när passport implementeras
-    }
-  }
+   // login() {
+     // this.$router.push("/firstpage"); // ta bort denna när passport implementeras
+   // }
+  },
+  
+  
 };
 </script>
+
+
+
 <style>
 
 * {
   position: relative;
 }
-#app {
-  display: flex;
-  flex-flow: row wrap;
-  flex-direction: row;
-  justify-items: center;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-}
+
 body {
   display: flex;
   flex-direction: column;
@@ -64,9 +68,10 @@ body {
   background-color: rgba(249, 177, 34, 0.75);
   margin: 0 1rem 5rem;
 }
-.login-button{
+.google-btn{
     display: flex;
     justify-items: center;
+    border: 1px solid black;
 }
 p{
   display: flex;
@@ -116,6 +121,7 @@ p{
     width: 400px;
     height: 450px;
     border-radius: 10%;
+    margin-top: 6rem;
 }
  
  /* MEDIA QUERY */
@@ -139,9 +145,9 @@ body {
     width: 300px;
     height: 400px;
     border-radius: 10%;
-    margin: 0 0 0 0;
+    margin: 5rem 0 0 0;
 }
-.login-button{
+.google-btn{
     display: flex;
     justify-items: center;
     border-radius: 10px;

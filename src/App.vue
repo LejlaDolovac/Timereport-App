@@ -9,13 +9,14 @@
 
 import navicon from '@/components/hamburgerMenu';
 
+
 export default {
     props: [
-        'icon'
+
     
     ],
  components: {
-   navicon
+   navicon,
  }   
 }
 
@@ -36,8 +37,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: black;
-  margin: 0 3rem 0 0;
-  padding: 2rem;
 }
 a{
   color: black;
