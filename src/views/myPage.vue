@@ -4,3 +4,9 @@
     </div>
 
 </template>
+
+<style lang="sass">
+@import '../sass/style.scss';
+
+
+</style>

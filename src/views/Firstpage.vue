@@ -32,6 +32,9 @@ export default {
 </script>
 
 <style>
+@import '../sass/style.scss';
+
+
 * {
   position: relative;
 }
@@ -72,8 +75,8 @@ body {
 }
 
 .loggabox {
-    display: flex;
-    margin: 0;
+  display: flex;
+  margin: 0;
   justify-content: center;
   width: 100vw;
   height: 100px;

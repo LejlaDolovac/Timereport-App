@@ -13,8 +13,8 @@
 
 
       <div class="login-input-button">
-         <a href="/auth/google" v-if="user" class="google-btn" value="Login">Login</a>
-         <a href="/auth/google" v-else class="google-btn" value="Logout">Logout</a>
+         <a href="/auth/google"  class="google-btn" value="Login">Login</a> <!-- USER är för passport.js  v-if="user-->
+         <a href="/auth/google"  class="google-btn" value="Logout">Logout</a> <!-- v-else -->
 
       </div>
       </form>
@@ -41,6 +41,8 @@ export default {
 
 
 <style>
+@import '../sass/style.scss';
+
 
 * {
   position: relative;
@@ -131,7 +133,6 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  background: url("../assets/squeed2.jpg") no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
 }
