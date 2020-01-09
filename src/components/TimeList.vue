@@ -100,7 +100,9 @@ export default {
                     event: arg.event
                 }) 
 
-            }
+            },
+           
+        
 
     },
     props:{
@@ -120,6 +122,9 @@ export default {
 Fullcalendar{
  margin-bottom: 2rem;
  
+}
+updateSize{
+height: auto;
 }
 
 </style>

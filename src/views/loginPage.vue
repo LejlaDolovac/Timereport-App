@@ -5,7 +5,7 @@
     </div>
     <div class="box-container">
   <div class="box" width="100">
-    <form class="input-container">
+    <form class="input-container" action="POST">
              <p>Email:</p>
           <input class="inputMail loginpage-button" type="text" placeholder="Email">
             <p> Password:</p>
@@ -29,9 +29,7 @@
 export default {
   name: 'loginPage',
   methods: {
-   // login() {
-     // this.$router.push("/firstpage"); // ta bort denna när passport implementeras
-   // }
+  
   },
   
   
@@ -74,6 +72,7 @@ body {
     display: flex;
     justify-items: center;
     border: 1px solid black;
+    font-size: 30px;
 }
 p{
   display: flex;

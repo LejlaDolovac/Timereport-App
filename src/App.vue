@@ -1,16 +1,7 @@
 <template>
 
-  <div :style="{backgroundImage: 'url(' + getImgUrl() + ')'}"
-        id="app">
-        <button id="back-button" :click="Back"><i class="arrow left"></i></button>
-        
-       <router-link
-          v-if="$routerHistory.hasPrevious()"
-          :to="{ path: $routerHistory.previous().path }">
-          GO BACK
-          </router-link> 
-    
-  
+  <div id="app">
+        <button class="back-btn" @click="GoBack"><i class="arrow left"></i></button>
      <navicon />
     <router-view/>
   </div>
@@ -30,21 +21,15 @@ export default {
    navicon,
  }  ,
  methods:{
-   getImgUrl() {
-      return require("@/assets/squeed2.jpg");
-    },
-    Back(){
-      this.$router.push('./Firstpage')
+    GoBack(){
+      this.$router.go(-1);
+
     }
  } 
 }
 
+
 </script>
-
-
-
-
-
 
 
 <style lang="scss">
@@ -56,36 +41,38 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: black;
-  background: no-repeat center center fixed; 
-  background-size: cover;
   width: 100vw;
   height: 100vh;
-
-}
-a{
-  color: black;
-  text-decoration: none;
   
 }
-#back-button{
-position:absolute;
-bottom:0;
-background-color: Transparent;
-border: none;
-margin: 4rem;
+body {
+  background: url("./assets/squeed2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
 
 }
 
 i {
-  border: solid black;
+  border: solid rgba(0, 0, 0, 0.9);
   border-width: 0 6px 6px 0;
   display: inline-block;
-  padding: 3px;
+  padding: 5px;
+  text-decoration: none;
+
 }
 .left {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
+  text-decoration: none;
+
 }
+.back-btn{
+  text-decoration: none;
+}
+
+
 
 </style>
 

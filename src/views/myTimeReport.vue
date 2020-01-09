@@ -1,8 +1,10 @@
 <template>
     <div id="ReportPage">
-           <div class="loggabox">
-      <div class="squeedLogga">SQUEEDTIME</div>
+        <fixed-header>
+           <div href="./components/Firstpage" class="loggabox" id="MyLoggbox">
+      <div class="squeedLogga"><a>SQUEEDTIME</a></div>
     </div>
+        </fixed-header>
         <div v-if="!submitted" class="container-box">
     <div class="container">
             <TimeList/>
@@ -11,13 +13,17 @@
                 <tr>
                     <th>Name</th>
                     <th>Working hours</th>
+                    <th>Date</th>
+
                     <th></th>
                 </tr>    
             </thead>
             <tbody>
                 <tr v-for="userName in users" :key="userName.id">
                     <td>{{userName.userId}}</td>
-                    <td>{{userName.msg}}h</td>
+                    <td>{{userName.comment}}h</td>
+                    <td>{{userName.date}}h</td>
+
                 </tr>
             </tbody>
         </table>
@@ -27,11 +33,12 @@
         <button class="sendReport" type="submit" v-on:click.prevent="sendReport" href="mailto:llleyla_@hotmail.com">
             <p> SEND REPORT</p>
         </button> 
+
          <button class="redigera">
             <p> REDIGERA</p>
         </button>
+                    </form> 
 
-    </form> 
     <div v-if="submitted">
         <h3>Thank you{{username.userId}}!</h3>
     </div>     
@@ -47,12 +54,14 @@
 
 import axios from 'axios';
 import TimeList from '../components/TimeList';
+import FixedHeader from 'vue-fixed-header';
 
 
 export default {
  name: 'ReportPage',
  components:{
      TimeList,
+     FixedHeader
  },
  data(){
    return{
@@ -86,13 +95,19 @@ methods:{
 }
  
 }
+
+
+
+
+
+
+
 </script>
 
 
 
 <style lang="scss">
 @import '../sass/style.scss';
-
 
 .sendReport{
     border: 1px solid black;
@@ -127,7 +142,7 @@ tr{
   justify-content: center;
   width: 100vw;
   height: 100px;
-  background: rgba(197, 196, 196, 0.9);
+  background: rgba(197, 196, 196, 0.1);
 }
 
 .squeedLogga {
@@ -144,6 +159,12 @@ tr{
 h3{
     font-size: 3rem;
     color: red;
+}
+.navbar.vue-fixed-header--isFixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
 }
 
 
