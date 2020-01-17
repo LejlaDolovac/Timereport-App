@@ -1,15 +1,19 @@
-<template>
 
+<template>
   <div id="app">
-        <button class="back-btn" @click="GoBack"><i class="arrow left"></i></button>
-     <navicon />
+    <div class="loggabox" id="MyLoggbox">
+                <div class="squeedLogga">
+                    <a>SQUEEDTIME</a>
+                    <button class="back-btn" @click="GoBack"><i class="arrow left"></i></button>
+
+                </div>
+        </div>
     <router-view/>
   </div>
 </template>
 <script>
 
 
-import navicon from '@/components/hamburgerMenu';
 
 
 export default {
@@ -18,7 +22,7 @@ export default {
     
     ],
  components: {
-   navicon,
+  // navicon,
  }  ,
  methods:{
     GoBack(){

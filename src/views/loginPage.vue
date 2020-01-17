@@ -88,17 +88,6 @@ p{
   height: 100px;
   background: rgba(197, 196, 196, 0.8);
 }
-.squeedLogga {
-  width: 289px;
-  height: 100px;
-  font-family: Changa;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 50px;
-  line-height: 118px;
-  color:  rgba(249, 177, 34);
-  flex: 1 1 auto;
-}
 .box-container {
   display: flex;
   flex-direction: column;
