@@ -2,10 +2,8 @@
 <template>
   <div id="app">
     <div class="loggabox" id="MyLoggbox">
-                <div class="squeedLogga">
-                    <a>SQUEEDTIME</a>
-                    <button class="back-btn" @click="GoBack"><i class="arrow left"></i></button>
-
+                <div @click="GoBack" class="squeedLogga">
+                    <a>TIMELOG</a>
                 </div>
         </div>
     <router-view/>

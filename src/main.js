@@ -7,18 +7,19 @@ import Vuetify from 'vuetify';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import modal from 'vue-js-modal';
+import "font-awesome/css/font-awesome.min.css";
+
 
 
 
 
 library.add(faUserSecret);
 
-Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.use(VueResource);
 Vue.use(modal, {dialog: true, dynamic: true});
 Vue.use(Vuetify);
+Vue.component('VueFontawesome', require('vue-fontawesome-icon/VueFontawesome.vue').default);
 
 Vue.config.productionTip = false;
 
