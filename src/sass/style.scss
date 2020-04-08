@@ -1,32 +1,61 @@
 * {
   position: relative;
-  background: url("/src/assets/squeed2.jpg") no-repeat center center fixed;
-  background-size: cover;
+  font-family: Changa;
 }
 body {
   display: flex;
   flex-direction: column;
   margin: 0;
+  padding-top: 90px;
 
-  #firstPage {
-    display: flex;
-    flex-flow: row wrap;
-    flex-direction: row;
-    height: 100vh;
+  /*#firstPage {
+    display: grid;
+    grid-template-rows: 2rem 1fr;
+  }*/
+  .loggabox {
+    display: grid;
     margin: 0;
-    padding: 0;
+    justify-content: center;
     width: 100vw;
+    height: 100px;
+    background: rgba(197, 196, 196, 0.8);
   }
-  .reportPage {
-    background: #343a40;
+  #navBar {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-gap: 60px;
+    margin: 0 auto;
   }
+  /*
+  .squeedLogga,
+  a {
+    width: 100%;
+    height: auto;
+    font-family: Changa;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 118px;
+    color: rgba(249, 177, 34, 0.9);
+    flex: 1 1 auto;
+    cursor: pointer;
+  }*/
   a {
     position: relative;
+  }
+  #ReportPage {
+    background-color: #343a40;
+    width: 100%;
   }
 
   .back-btn {
     position: absolute;
     top: 50%;
+    text-decoration: none;
+  }
+  .buttonClose {
+    background: none;
+    font-size: 1rem;
   }
   .button-container {
     display: flex;
@@ -39,64 +68,32 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 20px;
+    width: 100%;
+    height: 2rem;
     border: none;
     color: Black;
     font-weight: bold;
-    background-color: rgba(249, 177, 34, 0.75);
-    margin: 0 1rem 5rem;
-    margin-top: 16rem;
-    cursor: pointer;
-  }
-
-  .loggabox {
-    display: flex;
-    margin: 0;
-    justify-content: center;
-    width: 100vw;
-    height: 100px;
-    background: rgba(197, 196, 196, 0.8);
-  }
-  .squeedLogga,
-  a {
-    width: 289px;
-    height: 100px;
-    font-family: Changa;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 50px;
-    line-height: 118px;
-    color: rgba(249, 177, 34, 0.9);
-    flex: 1 1 auto;
+    background-color: rgba(249, 177, 34, 1);
     cursor: pointer;
   }
   a:hover {
     color: rgba(249, 177, 34, 0.9);
     text-decoration: none;
   }
-  .container-box {
-    margin-top: 5rem;
-  }
+
   table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
   }
-  .informatin-box-month {
-    border: 2px solid black;
-    background: grey;
-    width: 20rem;
-    height: 10rem;
-  }
+
   table-box,
   td,
   th {
     border-bottom: 1px solid black;
     margin: 7rem;
     padding: 6px;
-    text-align: left;
+    text-align: center;
   }
   th {
     color: white;
@@ -105,6 +102,20 @@ body {
   tr {
     color: white;
     align-items: center;
+  }
+  .table-box {
+    background-color: #343a40;
+    width: 95%;
+    height: 95%;
+    border-radius: 12px;
+    top: 1rem;
+    align-items: center;
+    left: 1rem;
+    right: 1rem;
+    transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
+    transform: translateZ(0);
+    perspective: 1000px;
+    backface-visibility: hidden;
   }
   .loggabox {
     display: flex;
@@ -125,6 +136,56 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100vw;
+  }
+  #myPage {
+    /*display: grid;
+    grid-template-rows: 4rem 1fr;*/
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    cursor: pointer;
+  }
+  #myPage .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 0 auto;
+  }
+  .grid {
+    background-color: #343a40;
+    width: 90%;
+    /*height: 95%;*/
+    border-radius: 12px;
+    top: 1rem;
+  }
+
+  .container-flex {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #343a40;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+
+  .container-flex ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .container-flex ul li {
+    display: flex;
+    width: 33.333%;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container-flex ul li button {
+    display: inline-flex;
   }
 
   @media (max-width: 812px) {

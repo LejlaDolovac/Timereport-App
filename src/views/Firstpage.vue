@@ -1,38 +1,23 @@
 <template>
   <div id="firstPage">
-    <div class="button-container">
-      <div class="buttonReport firstpage-button" v-on:click="showReport">Min tidsrapport</div>
-      <div class="buttonMyPage firstpage-button" v-on:click="showMyPage">
-        <font-awesome-icon class="myPageicon"/>
-        <h3>Min sida</h3>
-      </div>
-    </div>
+    <navBar />
+    <myTimeReport />
   </div>
 </template>
 
- 
+<script>
+import myTimeReport from "../views/myTimeReport";
+import navBar from "../components/navBar";
 
-
-<script >
 export default {
-  name: 'firstpage',
-  methods: {
-    showReport() {
-      this.$router.push("/myTimeReport");
-    },
-    showMyPage() {
-      this.$router.push("/myPage");
-    }
+  name: "firstpage",
+  components: {
+    myTimeReport,
+    navBar
   }
 };
 </script>
 
 <style>
-@import '../sass/style.scss';
-
-
-
-
+@import "../sass/style.scss";
 </style>
-
-

@@ -1,7 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import vueHeadful from "vue-headful";
 
 Vue.use(VueRouter);
+Vue.component("vue-headful", vueHeadful);
 
 const routes = [
   {
@@ -20,14 +22,14 @@ const routes = [
 
   {
     path: "/myTimeReport",
-    name: "myTimeReport",
+    name: "Min-rapport",
     mode: "history",
-    component: () => import("../views/myTimeReport.vue")
+    component: () => import("../views/Firstpage.vue")
   },
 
   {
     path: "/myPage",
-    name: "myPage",
+    name: "Min-sida",
     mode: "history",
     component: () => import("../views/myPage.vue")
   }
