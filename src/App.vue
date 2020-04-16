@@ -4,7 +4,7 @@
       <div @click="GoBack" class="squeedLogga">
         <a>TIMELOG</a>
         <br />
-        {{ this.monthName }}
+        <span>{{ this.monthName }}</span>
       </div>
       <navBar />
     </div>

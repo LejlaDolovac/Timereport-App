@@ -228,9 +228,6 @@ export default {
 };
 </script>
 
-Create a footer för mobile -first och lägg knapparna i footern - skicka report-
-login and out
-
 <style lang="scss">
 @import "../sass/style.scss";
 

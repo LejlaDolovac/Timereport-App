@@ -53,7 +53,10 @@
 
 <script>
 import axios from "axios";
+import Vue from "vue";
 import { format } from "date-fns";
+import Toasted from "vue-toasted";
+Vue.use(Toasted);
 
 export default {
   name: "ReportPage",
@@ -95,8 +98,14 @@ export default {
   methods: {
     sendReport: function() {
       let report = this.users;
+      let toast = this.$toasted.show("Mail has been  sent", {
+        theme: "bubble",
+        position: "top-center",
+        duration: 2000
+      });
       axios.post("http://localhost:3000/mail", report).then(function(report) {
         console.log(report, "send-report");
+        console.log(toast, "toast");
       });
     },
     formatDate(date) {
@@ -125,7 +134,6 @@ export default {
       });
     },
     scrollToEnd: function() {
-      console.log(containerBox, "containerBox");
       var containerBox = this.$el.querySelector("#containerBox");
       containerBox.scrollTop = containerBox.scrollHeight;
     }

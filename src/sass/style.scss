@@ -12,6 +12,7 @@ body {
   margin: 0;
   justify-content: center;
   width: 100vw;
+  padding-top: 10px;
   height: 100px;
   background: #c4c4c4;
 }
@@ -226,8 +227,15 @@ i {
 }
 
 #MyLoggbox .squeedLogga a {
-  font-size: 2rem;
+  font-size: 1.75rem;
+  line-height: 1em;
   cursor: pointer;
+  letter-spacing: 0.5em;
+}
+
+#MyLoggbox .squeedLogga span {
+  font-size: 0.75rem;
+  line-height: 1em;
 }
 
 #app #navBar {
@@ -447,5 +455,8 @@ i {
   .saveItem {
     position: relative;
     left: 0%;
+  }
+  #MyLoggbox .squeedLogga a {
+    left: 10px;
   }
 }
