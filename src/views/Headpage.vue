@@ -1,19 +1,16 @@
 <template>
-  <div id="firstPage">
-    <navBar />
+  <div id="Headpage">
     <myTimeReport />
   </div>
 </template>
 
 <script>
 import myTimeReport from "../views/myTimeReport";
-import navBar from "../components/navBar";
 
 export default {
-  name: "firstpage",
+  name: "Headpage",
   components: {
-    myTimeReport,
-    navBar
+    myTimeReport
   }
 };
 </script>

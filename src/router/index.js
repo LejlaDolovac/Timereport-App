@@ -8,23 +8,23 @@ Vue.component("vue-headful", vueHeadful);
 const routes = [
   {
     path: "/",
-    name: "loginPage",
+    name: "",
     mode: "history ",
-    component: () => import("../views/loginPage.vue")
+    component: () => import("../views/Startpage.vue")
   },
 
   {
-    path: "/Firstpage",
-    name: "Firstpage",
+    path: "/Headpage",
+    name: "Headpage",
     mode: "history",
-    component: () => import("../views/Firstpage.vue")
+    component: () => import("../views/Headpage.vue")
   },
 
   {
     path: "/myTimeReport",
     name: "Min-rapport",
     mode: "history",
-    component: () => import("../views/Firstpage.vue")
+    component: () => import("../views/Headpage.vue")
   },
 
   {

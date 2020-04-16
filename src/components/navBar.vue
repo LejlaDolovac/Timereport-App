@@ -1,37 +1,28 @@
 <template>
   <div id="navBar">
     <span class="button-container">
-      <div class="buttonReport firstpage-button" v-on:click="showReport">
-        My time-report
+      <div class="buttonReport Headpage-button" v-on:click="showReport">
+        Month-report
       </div>
-      {{ this.monthName }}
-      <div class="buttonMyPage firstpage-button" v-on:click="showMyPage">
-        My page
+
+      <div class="buttonMyPage Headpage-button" v-on:click="showMyPage">
+        Previous reports
       </div>
     </span>
   </div>
 </template>
 
 <script>
-import { format } from "date-fns";
-
 export default {
   name: "navBar",
-  data: function() {
-    return { monthName: "" };
-  },
   components: {},
   methods: {
     showReport() {
-      this.$router.push("/Firstpage");
+      this.$router.push("/Headpage");
     },
     showMyPage() {
       this.$router.push("/myPage");
     }
-  },
-  created: function() {
-    this.monthName = format(new Date(), "MMMM");
-    console.log(this.monthName, "-month");
   }
 };
 </script>

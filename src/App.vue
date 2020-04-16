@@ -3,27 +3,40 @@
     <div class="loggabox" id="MyLoggbox">
       <div @click="GoBack" class="squeedLogga">
         <a>TIMELOG</a>
+        <br />
+        {{ this.monthName }}
       </div>
+      <navBar />
     </div>
     <router-view />
   </div>
 </template>
 
 <script>
+import { format } from "date-fns";
+import navBar from "./components/navBar";
+
 export default {
-  props: [],
+  name: "app",
   components: {
-    // navicon,
+    navBar
   },
+  data: function() {
+    return {
+      monthName: "",
+      user: ""
+    };
+  },
+  props: [],
   methods: {
     GoBack() {
-      this.$router.go(-1);
+      this.$router.push("/");
     }
+  },
+  created: function() {
+    this.monthName = format(new Date(), "MMMM");
+    console.log(this.monthName, "-month");
   }
-  // created: function() {
-  // let currentUrl = window.location.pathname;
-  //  console.log(currentUrl);
-  // }.
 };
 </script>
 
@@ -37,28 +50,6 @@ export default {
   text-align: center;
   color: black;
   height: 100vh;
-  display: grid;
-  grid-template-rows: 100px 1fr;
-}
-
-#MyLoggbox {
-  position: fixed;
-  display: flex;
-  width: 100%;
-  height: 60px;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-
-#MyLoggbox .squeedLogga a {
-  font-size: 2rem;
-}
-
-#app #navBar {
-  position: fixed;
-  top: 60px;
-  z-index: 10;
 }
 
 body {
@@ -66,18 +57,5 @@ body {
   background-size: cover;
   min-width: 100%;
   min-height: 100%;
-}
-
-i {
-  border: solid rgba(0, 0, 0, 0.9);
-  border-width: 0 6px 6px 0;
-  display: inline-block;
-  padding: 5px;
-  text-decoration: none;
-}
-.left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  text-decoration: none;
 }
 </style>
